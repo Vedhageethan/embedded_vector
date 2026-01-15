@@ -1,0 +1,55 @@
+C51 COMPILER V9.50a   RTOS                                                                 12/28/2022 17:34:26 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE RTOS
+OBJECT MODULE PLACED IN C:\ISP's\SP_ISP\bin\Debug\rtos.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE rtos.c BROWSE DEBUG OBJECTEXTEND TABS(2) OBJECT(C:\ISP's\SP_ISP\bin\Debug\r
+                    -tos.obj)
+
+line level    source
+
+   1          #include"i2c_header.c"
+   2          #include"lcd_header.c"
+   3          void main()
+   4          {
+   5   1        unsigned char t;
+   6   1        LCD_INIT();
+   7   1        LCD_CMD(0x80);
+   8   1        LCD_STR("TIME:");
+   9   1        //LCD_STR("TIME-  :  :  ");
+  10   1        i2cdevwrite(0xd0,0x00,0x00);
+  11   1        i2cdevwrite(0xd0,0x01,0x59);
+  12   1        i2cdevwrite(0xd0,0x02,0x12);
+  13   1        while(1)
+  14   1        {
+  15   2          LCD_CMD(0x80);
+  16   2          LCD_STR("TIME:");
+  17   2          t=i2cdevread(0xd0,0x02);
+  18   2          LCD_DATA(t/16+48);
+  19   2          LCD_DATA(t%16+48);
+  20   2          LCD_DATA(':');
+  21   2          t=i2cdevread(0xd0,0x01);
+  22   2          LCD_DATA(t/16+48);
+  23   2          LCD_DATA(t%16+48);
+  24   2          LCD_DATA(':');
+  25   2          t=i2cdevread(0xd0,0x00);
+  26   2          LCD_DATA(t/16+48);
+  27   2          LCD_DATA(t%16+48);
+  28   2          LCD_CMD(0xc0);
+  29   2          LCD_STR("VED & DILLI");
+  30   2        }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    421    ----
+   CONSTANT SIZE    =     18    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

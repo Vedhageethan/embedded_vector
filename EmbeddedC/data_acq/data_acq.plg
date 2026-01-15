@@ -1,0 +1,152 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+V:\embedded\embedded_c\data_acq\data_acq.uvproj
+Project File Date:  01/03/2023
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(1): warning C318: can't open file 'i2c_driver.c'
+data_acq.c(2): warning C318: can't open file 'spifun.c'
+uart_header.c(34): error C141: syntax error near '/'
+uart_header.c(34): error C202: 'timer': undefined identifier
+uart_header.c(34): error C141: syntax error near 'mode'
+uart_header.c(35): error C141: syntax error near 'TH1'
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(1): warning C318: can't open file 'i2c_driver.c'
+spifun.h(1): error C202: 'P1': undefined identifier
+spifun.h(2): error C202: 'P1': undefined identifier
+spifun.h(3): error C202: 'P1': undefined identifier
+spifun.h(4): error C202: 'P1': undefined identifier
+spifun.h(8): error C202: '_cs': undefined identifier
+spifun.h(9): error C202: 'clk': undefined identifier
+spifun.h(10): error C202: 'mosi': undefined identifier
+spifun.h(11): error C202: 'clk': undefined identifier
+spifun.h(13): error C202: 'clk': undefined identifier
+spifun.h(14): error C202: 'mosi': undefined identifier
+spifun.h(15): error C202: 'clk': undefined identifier
+spifun.h(17): error C202: 'clk': undefined identifier
+spifun.h(18): error C202: 'clk': undefined identifier
+spifun.h(20): error C202: 'clk': undefined identifier
+spifun.h(21): error C202: 'mosi': undefined identifier
+spifun.h(22): error C202: 'clk': undefined identifier
+spifun.h(24): error C202: 'clk': undefined identifier
+spifun.h(25): error C202: 'mosi': undefined identifier
+spifun.h(26): error C202: 'clk': undefined identifier
+spifun.h(28): error C202: 'clk': undefined identifier
+spifun.h(29): error C202: 'clk': undefined identifier
+spifun.h(31): error C202: 'clk': undefined identifier
+spifun.h(32): error C202: 'clk': undefined identifier
+spifun.h(36): error C202: 'clk': undefined identifier
+spifun.h(37): error C202: 'miso': undefined identifier
+spifun.h(39): error C202: 'clk': undefined identifier
+spifun.h(41): error C202: '_cs': undefined identifier
+uart_header.c(34): error C141: syntax error near '/'
+uart_header.c(34): error C202: 'timer': undefined identifier
+uart_header.c(34): error C141: syntax error near 'mode'
+uart_header.c(35): error C141: syntax error near 'TH1'
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(1): warning C318: can't open file 'i2c_driver.c'
+uart_header.c(34): error C141: syntax error near '/'
+uart_header.c(34): error C202: 'timer': undefined identifier
+uart_header.c(34): error C141: syntax error near 'mode'
+uart_header.c(35): error C141: syntax error near 'TH1'
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+delay_1ms.c(9): error C237: '_delay_1ms': function already has a body
+uart_header.c(34): error C141: syntax error near '/'
+uart_header.c(34): error C202: 'timer': undefined identifier
+uart_header.c(34): error C141: syntax error near 'mode'
+uart_header.c(35): error C141: syntax error near 'TH1'
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+delay_1ms.c(9): error C237: '_delay_1ms': function already has a body
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+i2c_header.c(71): warning C206: 'delay_1ms': missing function-prototype
+i2c_header.c(71): error C267: 'delay_1ms': requires ANSI-style prototype
+delay_1ms.c(2): error C231: 'delay_1ms': redefinition
+delay_1ms.c(9): error C231: 'delay_1ms': redefinition
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+i2c_header.c(71): warning C206: 'delay_1ms': missing function-prototype
+i2c_header.c(71): error C267: 'delay_1ms': requires ANSI-style prototype
+delay_1ms.c(2): error C231: 'delay_1ms': redefinition
+delay_1ms.c(9): error C231: 'delay_1ms': redefinition
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+i2c_header.c(71): warning C206: 'delay_1ms': missing function-prototype
+i2c_header.c(71): error C267: 'delay_1ms': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(10): warning C206: 'i2c_devwrite': missing function-prototype
+data_acq.c(10): error C267: 'i2c_devwrite': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(13): warning C206: 'lcd_cmd': missing function-prototype
+data_acq.c(13): error C267: 'lcd_cmd': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(20): warning C206: 'lcd_str': missing function-prototype
+data_acq.c(20): error C267: 'lcd_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(9): warning C206: 'lcd_init': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created
+Rebuild target 'Target 1'
+compiling data_acq.c...
+data_acq.c(8): warning C206: 'cgram_write': missing function-prototype
+data_acq.c(45): warning C206: 'uart_str': missing function-prototype
+data_acq.c(45): error C267: 'uart_str': requires ANSI-style prototype
+Target not created

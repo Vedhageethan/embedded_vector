@@ -1,0 +1,146 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/16/2022  19:06:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE C:\ISP's\SP_ISP\bin\Debug\display_char.obj TO C:\ISP's\SP_ISP\bin\Debug\blink PRINT (.\blink.m5
+>> 1)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\ISP's\SP_ISP\bin\Debug\display_char.obj (DISPLAY_CHAR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  C:\ISP's\SP_ISP\bin\Debug\blink (DISPLAY_CHAR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0027H     UNIT         ?PR?_DELAY_1MS?DISPLAY_CHAR
+            CODE    002AH     0019H     UNIT         ?PR?LCD_INIT?DISPLAY_CHAR
+            CODE    0043H     0014H     UNIT         ?PR?MAIN?DISPLAY_CHAR
+            CODE    0057H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0063H     0006H     UNIT         ?PR?_LCD_CMD?DISPLAY_CHAR
+            CODE    0069H     0006H     UNIT         ?PR?_LCD_DATA?DISPLAY_CHAR
+
+
+
+OVERLAY MAP OF MODULE:   C:\ISP's\SP_ISP\bin\Debug\blink (DISPLAY_CHAR)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DISPLAY_CHAR
+
+?PR?MAIN?DISPLAY_CHAR
+  +--> ?PR?LCD_INIT?DISPLAY_CHAR
+  +--> ?PR?_LCD_DATA?DISPLAY_CHAR
+
+?PR?LCD_INIT?DISPLAY_CHAR
+  +--> ?PR?_LCD_CMD?DISPLAY_CHAR
+
+?PR?_LCD_CMD?DISPLAY_CHAR
+  +--> ?PR?_DELAY_1MS?DISPLAY_CHAR
+
+?PR?_LCD_DATA?DISPLAY_CHAR
+  +--> ?PR?_DELAY_1MS?DISPLAY_CHAR
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/16/2022  19:06:43  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  C:\ISP's\SP_ISP\bin\Debug\blink (DISPLAY_CHAR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DISPLAY_CHAR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:000FH         PUBLIC        _delay_1ms
+  C:0063H         PUBLIC        _LCD_CMD
+  B:0090H.0       PUBLIC        RS
+  C:0043H         PUBLIC        main
+  B:0090H.1       PUBLIC        RW
+  B:0090H.2       PUBLIC        E
+  C:0069H         PUBLIC        _LCD_DATA
+  C:002AH         PUBLIC        LCD_INIT
+  -------         PROC          L?0018
+  -------         ENDPROC       L?0018
+  -------         PROC          _DELAY_1MS
+  D:0006H         SYMBOL        dly
+  -------         DO            
+  D:0005H         SYMBOL        d
+  -------         ENDDO         
+  C:000FH         LINE#         1
+  C:000FH         LINE#         2
+  C:000FH         LINE#         4
+  C:001AH         LINE#         5
+  C:001AH         LINE#         6
+  C:001EH         LINE#         7
+  C:0022H         LINE#         8
+  C:0029H         LINE#         9
+  -------         ENDPROC       _DELAY_1MS
+  -------         PROC          LCD_INIT
+  C:002AH         LINE#         9
+  C:002AH         LINE#         10
+  C:002AH         LINE#         11
+  C:002FH         LINE#         12
+  C:0034H         LINE#         13
+  C:0039H         LINE#         14
+  C:003EH         LINE#         15
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        c
+  C:0063H         LINE#         17
+  C:0063H         LINE#         18
+  C:0063H         LINE#         19
+  C:0063H         LINE#         20
+  C:0063H         LINE#         21
+  C:0063H         LINE#         22
+  C:0063H         LINE#         23
+  C:0066H         LINE#         24
+  C:0068H         LINE#         25
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        d
+  C:0069H         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/16/2022  19:06:43  PAGE 3
+
+
+  C:0069H         LINE#         27
+  C:0069H         LINE#         28
+  C:0069H         LINE#         29
+  C:0069H         LINE#         30
+  C:0069H         LINE#         31
+  C:0069H         LINE#         32
+  C:006CH         LINE#         33
+  C:006EH         LINE#         34
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          MAIN
+  C:0043H         LINE#         3
+  C:0043H         LINE#         4
+  C:0043H         LINE#         5
+  C:0046H         LINE#         6
+  C:004BH         LINE#         7
+  C:0050H         LINE#         8
+  C:0055H         LINE#         9
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DISPLAY_CHAR
+
+Program Size: data=9.0 xdata=0 code=111
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

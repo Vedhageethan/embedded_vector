@@ -1,0 +1,37 @@
+C51 COMPILER V9.50a   TIMER0                                                               11/27/2022 11:12:46 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE TIMER0
+OBJECT MODULE PLACED IN C:\ISP's\SP_ISP\bin\Debug\timer0.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE timer_counter\timer0.c BROWSE DEBUG OBJECTEXTEND PRINT(.\timer0.lst) TABS(2
+                    -) OBJECT(C:\ISP's\SP_ISP\bin\Debug\timer0.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void main()
+   3          {
+   4   1        TMOD = 0x00;//timer 0 mode 0
+   5   1        /**set timer to required delay**/
+   6   1        TH0 = 0xE0;
+   7   1        TL0 = 0x18;
+   8   1        /********************************/
+   9   1        TR0 = 1;//START TIMER 0
+  10   1        while(TF0 == 0);
+  11   1        TR0 = 0;//STOP TIMER0
+  12   1        TF0 = 0;//CLEAR FLAG
+  13   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     19    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

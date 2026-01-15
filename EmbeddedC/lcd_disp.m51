@@ -1,0 +1,120 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/14/2022  15:50:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE C:\ISP's\SP_ISP\bin\Debug\uart_header.obj TO C:\ISP's\SP_ISP\bin\Debug\lcd_disp PRINT (.\lcd_di
+>> sp.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\ISP's\SP_ISP\bin\Debug\uart_header.obj (UART_HEADER)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  C:\ISP's\SP_ISP\bin\Debug\lcd_disp (UART_HEADER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0012H     UNIT         ?PR?MAIN?UART_HEADER
+            CODE    0015H     000FH     UNIT         ?PR?UART_INIT?UART_HEADER
+            CODE    0024H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0030H     000AH     UNIT         ?PR?UART_RX?UART_HEADER
+            CODE    003AH     0008H     UNIT         ?PR?_UART_TX?UART_HEADER
+
+
+
+OVERLAY MAP OF MODULE:   C:\ISP's\SP_ISP\bin\Debug\lcd_disp (UART_HEADER)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?UART_HEADER
+
+?PR?MAIN?UART_HEADER              0008H    0003H
+  +--> ?PR?UART_INIT?UART_HEADER
+  +--> ?PR?UART_RX?UART_HEADER
+  +--> ?PR?_UART_TX?UART_HEADER
+
+
+
+SYMBOL TABLE OF MODULE:  C:\ISP's\SP_ISP\bin\Debug\lcd_disp (UART_HEADER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UART_HEADER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0030H         PUBLIC        uart_rx
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/14/2022  15:50:43  PAGE 2
+
+
+  C:003AH         PUBLIC        _uart_tx
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0003H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:0015H         PUBLIC        uart_init
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:000AH         SYMBOL        rx_data
+  -------         ENDDO         
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0003H         LINE#         9
+  C:0008H         LINE#         11
+  C:000BH         LINE#         14
+  C:000BH         LINE#         15
+  C:000BH         LINE#         16
+  C:0010H         LINE#         17
+  C:0013H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         PROC          UART_INIT
+  C:0015H         LINE#         20
+  C:0015H         LINE#         21
+  C:0015H         LINE#         22
+  C:0018H         LINE#         23
+  C:001BH         LINE#         24
+  C:0021H         LINE#         25
+  C:0023H         LINE#         26
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_TX
+  D:0007H         SYMBOL        d
+  C:003AH         LINE#         27
+  C:003AH         LINE#         28
+  C:003AH         LINE#         29
+  C:003CH         LINE#         30
+  C:003FH         LINE#         31
+  C:0041H         LINE#         32
+  -------         ENDPROC       _UART_TX
+  -------         PROC          UART_RX
+  C:0030H         LINE#         39
+  C:0030H         LINE#         40
+  C:0030H         LINE#         41
+  C:0033H         LINE#         42
+  C:0035H         LINE#         43
+  C:0039H         LINE#         44
+  -------         ENDPROC       UART_RX
+  -------         ENDMOD        UART_HEADER
+
+Program Size: data=12.0 xdata=0 code=66
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

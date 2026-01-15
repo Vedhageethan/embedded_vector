@@ -1,0 +1,107 @@
+C51 COMPILER V9.50a   DISPLAY_CHAR                                                         11/18/2022 18:32:43 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE DISPLAY_CHAR
+OBJECT MODULE PLACED IN C:\ISP's\SP_ISP\bin\Debug\display_char.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd_interfacing\display_char.c BROWSE DEBUG OBJECTEXTEND PRINT(.\display_ch
+                    -ar.lst) TABS(2) OBJECT(C:\ISP's\SP_ISP\bin\Debug\display_char.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"lcd_header.c"
+   3          void main()
+   4          {
+   5   1        //LCD_INIT();
+   6   1      //scroll the string from left to right
+   7   1      ///*
+   8   1        unsigned char cmd;
+   9   1        LCD_INIT();
+  10   1        for(cmd=0x80;cmd<=0x8f;cmd++)
+  11   1        {
+  12   2          LCD_CMD(cmd);
+  13   2          LCD_STR("VEDHA");
+  14   2          delay_1ms(500);
+  15   2          LCD_CMD(0x01);
+  16   2        }
+  17   1      //*/
+  18   1      }
+  19          /*it will run infinitely
+  20            while(1)
+  21            {
+  22              LCD_DATA('V');
+  23              LCD_DATA('E');
+  24              LCD_DATA('D');
+  25            }
+  26          */
+  27          /*
+  28            while(1)
+  29            {
+  30              LCD_CMD(0x80);
+  31              LCD_STR("GURU GIRI VEDHA");
+  32              LCD_CMD(0xc0);
+  33              LCD_STR("MEENA");
+  34            }
+  35          */
+  36          /*
+  37            while(1)
+  38            {
+  39              LCD_CMD(0x80);
+  40              LCD_STR("Vedha & PREETHI");
+  41              LCD_CMD(0xc0);
+  42              LCD_STR("best friends");
+  43            }
+  44          */
+  45          
+  46          /*
+  47            //for displaying Integer both +ve and -ve
+  48            while(1)
+  49            {
+  50              LCD_CMD(0x80);
+  51              LCD_INT(-23);
+  52              delay_1ms(1000);
+  53              LCD_CMD(0x01);
+  54              LCD_CMD(0x80);
+C51 COMPILER V9.50a   DISPLAY_CHAR                                                         11/18/2022 18:32:43 PAGE 2   
+
+  55              LCD_INT(0);
+  56              delay_1ms(1000);
+  57              LCD_CMD(0x01);
+  58              LCD_CMD(0x80);
+  59              LCD_INT(9512);
+  60              delay_1ms(1000);
+  61              LCD_CMD(0x01);//clear disp
+  62            }
+  63            */
+  64            //for displaying float numbers
+  65              /*
+  66            while(1)
+  67              {
+  68                LCD_CMD(0x80);
+  69                LCD_FLOAT(77.60);
+  70                delay_1ms(1000);
+  71                LCD_CMD(0x01);
+  72                LCD_CMD(0x80);
+  73                LCD_FLOAT(90.66);
+  74                delay_1ms(1000);
+  75                LCD_CMD(0x01);
+  76                LCD_CMD(0x80);
+  77                LCD_FLOAT(94.4);
+  78                delay_1ms(1000);
+  79                LCD_CMD(0x01);//clear disp
+  80              }
+  81          */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    174    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

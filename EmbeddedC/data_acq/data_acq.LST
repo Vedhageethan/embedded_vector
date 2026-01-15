@@ -1,0 +1,97 @@
+C51 COMPILER V9.52.0.0   DATA_ACQ                                                          01/14/2023 16:54:35 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE DATA_ACQ
+OBJECT MODULE PLACED IN data_acq.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE data_acq.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include"i2c_header.c"
+   2          #include"spifun.h"
+   3          #include"uart_header.c"
+*** ERROR C237 IN LINE 9 OF delay_1ms.c: '_delay_1ms': function already has a body
+   4          void main()
+   5          {
+   6   1        unsigned char t,t1;
+   7   1        uart_init();
+   8   1        cgram_write();
+   9   1        LCD_INIT();
+  10   1        i2cdevwrite(0xd0,0x00,0x55);
+  11   1        i2cdevwrite(0xd0,0x01,0x59);
+  12   1        i2cdevwrite(0xd0,0x02,0x23);
+  13   1        LCD_CMD(0xc9);
+  14   1        //LCD_DATA(0);
+  15   1        LCD_DATA('V');
+  16   1      while(1)
+  17   1      {
+  18   2        float f;
+  19   2        LCD_CMD(0x80);
+  20   2        LCD_STR("TIME:");
+  21   2        t=i2cdevread(0xd0,0x02);
+  22   2        t1=t;
+  23   2        LCD_CMD(0x8d);
+  24   2        if(t==0)
+  25   2        {
+  26   3          t=t+18;
+  27   3          LCD_STR("am");
+  28   3        }
+  29   2        else if(t>18)
+  30   2        {
+  31   3          t=t-18;
+  32   3          LCD_STR("pm");
+  33   3        }
+  34   2        else
+  35   2        {
+  36   3          if(t==18)
+  37   3            LCD_STR("pm");
+  38   3            else
+  39   3          LCD_STR("am");
+  40   3        }
+  41   2        LCD_CMD(0x85);
+  42   2        LCD_DATA(t/16+48);
+  43   2        LCD_DATA(t%16+48);
+  44   2        LCD_DATA(':');
+  45   2        uart_str("TIME:");
+  46   2        uart_tx(t/16+48);
+  47   2        uart_tx(t%16+48);
+  48   2        uart_tx(':');
+  49   2        t=i2cdevread(0xd0,0x01);
+  50   2        LCD_DATA(t/16+48);
+  51   2        LCD_DATA(t%16+48);
+  52   2        LCD_DATA(':');
+  53   2        uart_tx(t/16+48);
+  54   2        uart_tx(t%16+48);
+C51 COMPILER V9.52.0.0   DATA_ACQ                                                          01/14/2023 16:54:35 PAGE 2   
+
+  55   2        uart_tx(':');
+  56   2        t=i2cdevread(0xd0,0x00);
+  57   2        LCD_DATA(t/16+48);
+  58   2        LCD_DATA(t%16+48);
+  59   2        uart_tx(t/16+48);
+  60   2        uart_tx(t%16+48);
+  61   2        if(t1==0)
+  62   2         uart_str("am");
+  63   2        else if(t1>18)
+  64   2         uart_str("pm");
+  65   2        else
+  66   2        {
+  67   3          if(t1==18)
+  68   3            uart_str("pm");
+  69   3          else
+  70   3          uart_str("am");
+  71   3        }
+  72   2        uart_str("\r\n");
+  73   2        LCD_CMD(0xc0);
+  74   2        LCD_STR("VOLT:");
+  75   2        f=spi_adc(0,0);
+  76   2        LCD_FLOAT(f);
+  77   2        uart_str("VOLT:");
+  78   2        uart_float(f);
+  79   2        uart_str("V");
+  80   2        uart_str("\r\n");
+  81   2        delay_1ms(500);
+  82   2        }
+  83   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

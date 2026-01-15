@@ -1,0 +1,90 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/25/2012  02:02:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE C:\SP_ISP\blink_led.obj TO C:\SP_ISP\switchled PRINT (.\switchled.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\SP_ISP\blink_led.obj (BLINK_LED)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  C:\SP_ISP\switchled (BLINK_LED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001BH     UNIT         ?PR?_DELAY_1MS?BLINK_LED
+            CODE    001EH     0014H     UNIT         ?PR?MAIN?BLINK_LED
+            CODE    0032H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   C:\SP_ISP\switchled (BLINK_LED)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BLINK_LED
+
+?PR?MAIN?BLINK_LED
+  +--> ?PR?_DELAY_1MS?BLINK_LED
+
+
+
+SYMBOL TABLE OF MODULE:  C:\SP_ISP\switchled (BLINK_LED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINK_LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0003H         PUBLIC        _delay_1ms
+  C:001EH         PUBLIC        main
+  B:0090H.0       PUBLIC        LED
+  -------         PROC          _DELAY_1MS
+  D:0006H         SYMBOL        dly
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/25/2012  02:02:05  PAGE 2
+
+
+  D:0005H         SYMBOL        d
+  -------         ENDDO         
+  C:0003H         LINE#         1
+  C:0003H         LINE#         2
+  C:0003H         LINE#         4
+  C:000EH         LINE#         5
+  C:000EH         LINE#         6
+  C:0012H         LINE#         7
+  C:0016H         LINE#         8
+  C:001DH         LINE#         9
+  -------         ENDPROC       _DELAY_1MS
+  -------         PROC          MAIN
+  C:001EH         LINE#         4
+  C:001EH         LINE#         5
+  C:001EH         LINE#         6
+  C:001EH         LINE#         7
+  C:001EH         LINE#         8
+  C:0020H         LINE#         9
+  C:0027H         LINE#         10
+  C:0029H         LINE#         11
+  C:0030H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BLINK_LED
+
+Program Size: data=9.0 xdata=0 code=62
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
